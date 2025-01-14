@@ -42,6 +42,42 @@ body {
 	width: 20px;
 }
 
+/* Personnalisation des contrôles */
+.carousel-control-prev,
+.carousel-control-next {
+  width: 20%; /* Augmenter la largeur des zones cliquables */
+  opacity: 1; /* Améliorer la visibilité par défaut */
+  color: #fd7e14;
+  transition: all 0.3s ease-in-out; /* Améliorer les transitions */
+}
+
+.carousel-control-prev:hover,
+.carousel-control-next:hover {
+  opacity: 1; /* Pleine opacité au survol */
+  transform: scale(1.1); /* Agrandissement léger au survol */
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  width: 5rem; /* Agrandir les icônes */
+  height: 5rem;
+  background-size: 100%; /* Maintenir la taille des icônes */
+  
+}
+
+.carousel-control-prev-icon {
+	background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23fd7e14' stroke='%23fd7e14' stroke-width='0.5'%3e%3cpath d='M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z'/%3e%3c/svg%3e");
+  }
+  
+  .carousel-control-next-icon {
+	background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23fd7e14' stroke='%23fd7e14' stroke-width='0.5'%3e%3cpath d='M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e");
+  }
+  
+  
+
+
+
+
 #about {
 	display: flex;
 	background-color: #F6D2B8;
