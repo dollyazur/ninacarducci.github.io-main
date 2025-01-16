@@ -276,9 +276,12 @@ form textarea {
 	font-size: 1.2em;
 	margin-bottom: 20px;
 }
-input[type="submit"] {
+.btn-submit {
 	background-color: #BEB45A;
-	padding: .5em 1em
+	padding: .5em 1em;
+	text-decoration: none; /* Supprime le soulignement par défaut des liens */
+    display: inline-block; /* Permet au lien de se comporter comme un bouton */
+    text-align: center; /* Centre le texte à l'intérieur du "bouton" */
 }
 
 @media all and (max-width: 1180px) {
