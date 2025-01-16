@@ -3,35 +3,65 @@ const fs = require('fs');
 const path = require('path');
 
 // Dossiers source et sortie
-const inputDirectory = './images'; // Dossier contenant vos images et sous-dossiers
-const outputDirectory = './output'; // Où les fichiers optimisés seront sauvegardés
+const inputDirectory = './images'; // Dossier source contenant vos images
+const outputDirectory = './output'; // Dossier cible pour les images optimisées
 
-// Fonction pour parcourir les dossiers de manière récursive
+// Dimensions maximales des images
+const MAX_WIDTH = 1920; // Largeur maximale
+const MAX_HEIGHT = 1080; // Hauteur maximale
+
+// Fonction récursive pour traiter les fichiers dans les sous-dossiers
 function processDirectory(inputDir, outputDir) {
-  // Crée le dossier de sortie s'il n'existe pas
-  if (!fs.existsSync(outputDir)) {
-    fs.mkdirSync(outputDir, { recursive: true });
-  }
-
-  // Parcourt tous les fichiers et dossiers dans le dossier courant
-  fs.readdirSync(inputDir).forEach(item => {
-    const inputPath = path.join(inputDir, item);
-    const outputPath = path.join(outputDir, item);
-
-    if (fs.statSync(inputPath).isDirectory()) {
-      // Si c'est un sous-dossier, on le traite récursivement
-      processDirectory(inputPath, outputPath);
-    } else if (/\.(jpg|jpeg|png)$/i.test(item)) {
-      // Si c'est une image, on la redimensionne et la convertit en WebP
-      sharp(inputPath)
-       
-        .toFormat('webp') // Convertit au format WebP
-        .toFile(outputPath.replace(/\.(jpg|jpeg|png)$/i, '.webp'))
-        .then(() => console.log(`Optimisé : ${outputPath.replace(/\.(jpg|jpeg|png)$/i, '.webp')}`))
-        .catch(err => console.error(`Erreur avec ${inputPath}:`, err));
+  try {
+    // Crée le dossier de sortie s'il n'existe pas
+    if (!fs.existsSync(outputDir)) {
+      fs.mkdirSync(outputDir, { recursive: true });
     }
-  });
+
+    // Liste les fichiers et sous-dossiers du dossier actuel
+    const filesAndDirs = fs.readdirSync(inputDir);
+
+    filesAndDirs.forEach(item => {
+      const inputPath = path.join(inputDir, item); // Chemin source complet
+      const outputPath = path.join(outputDir, item); // Chemin de sortie complet
+
+      try {
+        if (fs.statSync(inputPath).isDirectory()) {
+          // Si c'est un dossier, appel récursif
+          console.log(`📂 Dossier détecté : ${inputPath}`);
+          processDirectory(inputPath, outputPath);
+        } else if (/\.(jpg|jpeg|png)$/i.test(item)) {
+          // Si c'est une image (jpg, jpeg, png), on la traite
+          console.log(`🖼️ Image trouvée : ${inputPath}`);
+          sharp(inputPath)
+            .resize({
+              width: MAX_WIDTH,
+              height: MAX_HEIGHT,
+              fit: 'inside', // Redimensionne en respectant les proportions
+              withoutEnlargement: true // Ne redimensionne pas si l'image est plus petite
+            })
+            .toFormat('webp') // Compression en WebP 
+            .toFile(outputPath.replace(/\.(jpg|jpeg|png)$/i, '.webp')) // Sauvegarde en WebP
+            .then(() => {
+              console.log(`✅ Image optimisée : ${outputPath.replace(/\.(jpg|jpeg|png)$/i, '.webp')}`);
+            })
+            .catch(err => {
+              console.error(`❌ Erreur lors du traitement de l'image ${inputPath} :`, err);
+            });
+        } else {
+          console.log(`⚠️ Fichier ignoré (pas une image) : ${inputPath}`);
+        }
+      } catch (err) {
+        console.error(`❌ Erreur lors de l'accès à l'élément ${inputPath} :`, err);
+      }
+    });
+  } catch (err) {
+    console.error(`❌ Erreur lors du traitement du dossier ${inputDir} :`, err);
+  }
 }
 
-// Démarre le traitement depuis le dossier principal
+// Appel principal pour traiter le dossier source
+console.log('🚀 Début du traitement...');
 processDirectory(inputDirectory, outputDirectory);
+console.log('✅ Traitement terminé.');
+
