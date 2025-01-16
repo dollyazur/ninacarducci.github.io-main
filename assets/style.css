@@ -117,7 +117,8 @@ body {
 }
 .about-me__introduction {
 	font-family: 'Spectral';
-
+	font-weight: 800;
+	font-size: x-large;
 	font-style: italic;
 	width: 60%;
 }

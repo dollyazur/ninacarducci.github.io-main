@@ -5,18 +5,176 @@
 	<link rel="preload" href="./assets/output/slider/ryoji-iwata-wUZjnOv7t0g-unsplash.webp" as="image">
 	<link rel="preload" href="./assets/output/slider/nicholas-green-nPz8akkUmDI-unsplash.webp" as="image">
 	<link rel="preload" href="./assets/output/slider/edward-cisneros-3_h6-1NPDGw-unsplash.webp" as="image">
-	<link rel="stylesheet" href="./assets/bootstrap/bootstrap.css">
-	<link rel="stylesheet" href="./assets/style.css">
+	<link rel="stylesheet" href="./assets/bootstrap/bootstrap.min.css">
+	<link rel="stylesheet" href="./assets/style.min.css">
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Inter&family=Spectral:ital,wght@0,400;1,300;1,400;1,800&display=swap" rel="stylesheet">
 	<meta charset="utf-8">
 	<script src="./assets/bootstrap/bootstrap.bundle.js"></script>
 	<script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
-	<script src="./assets/maugallery.js"></script>
-	<script src="./assets/scripts.js"></script>
+	<script src="./assets/maugallery.min.js"></script>
+	<script src="./assets/scripts.min.js"></script>
 	<title>Nina Carducci</title>
-	
+
+	<!-- microdata with schema.org labels -->
+	<script type="application/ld+json">
+		{
+			"@context": "https://schema.org",
+			"@graph": [
+				{
+					"@type": "LocalBusiness",
+					"@id": "Nina Carducci - photographe",
+					"name": "Nina Carducci - photographe (Bordeaux, île-de-France)",
+					"url": "https://ryssanavlys.github.io/OC_P8_NinaCarducci/#services",
+					"description": "Nina Carducci est photographe et offre ses services de shooting, de retouches de photographies et de création d’albums. Figer des instants de bonheur à travers la photographie permet de les partager à ses proches et de rendre ces moments immortels.",
+					"openingHours": "Mo-Fr 10:00-19:00",
+					"address": {
+						"@type": "PostalAddress",
+						"streetAddress": "68 avenue Alsace-Lorraine",
+						"addressLocality": "Bordeaux",
+						"postalCode": "33200",
+						"addressCountry": "FR"
+					},
+					"areaServed": [
+						{
+							"@type": "Place",
+							"name": "Bordeaux"
+						},
+						{
+							"@type": "Place",
+							"name": "Île-de-France"
+						}
+					],
+					"funder": {
+						"@type": "Person",
+						"name": "Nina Carducci",
+						"gender": "Female",
+						"description": "Nina Carducci est une photographe professionnelle passionnée par l'art de capturer des moments authentiques et des émotions à travers son objectif, afin de les rendre immortels.",
+						"url": "https://ryssanavlys.github.io/OC_P8_NinaCarducci/#about"
+					},
+					"telephone": "05 56 67 78 89",
+					"image": "https://ryssanavlys.github.io/OC_P8_NinaCarducci/assets/images/nina-carducci.png",
+					"priceRange": "€€"
+				},
+				{
+					"@type": "Product",
+					"name": "Shooting photo",
+					"Manufacturer": {
+						"@type": "LocalBusiness",
+						"@id": "Nina Carducci - photographe"
+					},
+					"image": "https://ryssanavlys.github.io/OC_P8_NinaCarducci/assets/images/camera.webp",
+					"description": "Pour capturer vos moments les plus précieux et garder un souvenir impérissable.",
+					"offers": {
+						"@type": "Offer",
+						"priceCurrency": "EUR",
+						"price": "350",
+						"eligibleQuantity": {
+							"@type": "QuantitativeValue",
+							"unitCode": "DAY",
+							"value": 0.5
+						},
+						"availableAtOrFrom": {
+							"@type": "Place",
+							"name": "Studio de Nina Carducci",
+							"address": {
+								"@type": "PostalAddress",
+								"streetAddress": "68 avenue Alsace-Lorraine",
+								"addressLocality": "Bordeaux",
+								"postalCode": "33200",
+								"addressCountry": "FR"
+							}
+						},
+						"areaServed": [
+							{
+								"@type": "Place",
+								"name": "Bordeaux"
+							},
+							{
+								"@type": "Place",
+								"name": "Île-de-France"
+							}
+						]
+					}
+				},
+				{
+					"@type": "Product",
+					"name": "Retouche photo",
+					"Manufacturer": {
+						"@type": "LocalBusiness",
+						"@id": "Nina Carducci - photographe"
+					},
+					"image": "https://ryssanavlys.github.io/OC_P8_NinaCarducci/assets/images/camera.webp",
+					"description": "Vous souhaitez retoucher vos photos pour un résultat professionnel ? Bénéficier d’un rendu optimal pour vos publications !",
+					"offers": {
+						"@type": "Offer",
+						"priceCurrency": "EUR",
+						"price": "50",
+						"eligibleQuantity": {
+							"@type": "QuantitativeValue",
+							"unitCode": "H87",
+							"value": 1
+						},
+						"availableAtOrFrom": {
+							"@type": "Place",
+							"name": "Studio de Nina Carducci",
+							"address": {
+								"@type": "PostalAddress",
+								"streetAddress": "68 avenue Alsace-Lorraine",
+								"addressLocality": "Bordeaux",
+								"postalCode": "33200",
+								"addressCountry": "FR"
+							}
+						},
+						"areaServed": [
+							{
+								"@type": "Place",
+								"name": "France entière"
+							}
+						]
+					}
+				},
+				{
+					"@type": "Product",
+					"name": "Album photos",
+					"Manufacturer": {
+						"@type": "LocalBusiness",
+						"@id": "Nina Carducci - photographe"
+					},
+					"image": "https://ryssanavlys.github.io/OC_P8_NinaCarducci/assets/images/camera.webp",
+					"description": "Partagez avec vos proches et vos clients les photos des moments partagés ensemble à travers un album photo personnalisé.",
+					"offers": {
+						"@type": "Offer",
+						"priceCurrency": "EUR",
+						"price": "400",
+						"eligibleQuantity": {
+							"@type": "QuantitativeValue",
+							"unitCode": "H87",
+							"value": 1
+						},
+						"availableAtOrFrom": {
+							"@type": "Place",
+							"name": "Studio de Nina Carducci",
+							"address": {
+								"@type": "PostalAddress",
+								"streetAddress": "68 avenue Alsace-Lorraine",
+								"addressLocality": "Bordeaux",
+								"postalCode": "33200",
+								"addressCountry": "FR"
+							}
+						},
+						"areaServed": [
+							{
+								"@type": "Place",
+								"name": "France entière"
+							}
+						]
+					}
+				}
+			]
+		}
+	</script>
 </head>
 <body>
 	<header>
@@ -81,7 +239,7 @@
 				</div>
 				<div id="about-me">
 					<h2 class="about-me__title">A propos de moi</h2>
-					<h3 class="about-me__introduction">Devenir photographe était pour moi une évidence. Comme si j’y étais prédestiné. Saisir un moment, une émotion, une situation, un endroit, une lumière et les rendre immortels, voilà ce qui me fait vibrer.</h3>
+					<div class="about-me__introduction">Devenir photographe était pour moi une évidence. Comme si j’y étais prédestiné. Saisir un moment, une émotion, une situation, un endroit, une lumière et les rendre immortels, voilà ce qui me fait vibrer.</div>
 						<p>Nous passons notre vie à chercher le bonheur, et lorsque nous y touchons, nous n’avons qu’une envie : le figer au travers de photographies pour le savourer avec les personnes qui sont importantes à nos yeux, ou le partager au plus grand nombre.
 							C’est ce que je vous propose : saisir ces merveilleux moments au travers de mon regard, mon approche, ma technique. Rendre ces moments immortels, afin que vous puissiez y puiser de l’amour, du bonheur, de la tendresse et de lumière à chaque fois que vous poserez les yeux sur vos photos.</p>
 					</div>
