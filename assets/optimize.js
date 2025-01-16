@@ -8,7 +8,7 @@ const outputDirectory = './output'; // Dossier cible pour les images optimisées
 
 // Dimensions maximales des images
 const MAX_WIDTH = 1920; // Largeur maximale
-const MAX_HEIGHT = 1080; // Hauteur maximale
+const MAX_HEIGHT = 1000; // Hauteur maximale
 
 // Fonction récursive pour traiter les fichiers dans les sous-dossiers
 function processDirectory(inputDir, outputDir) {
