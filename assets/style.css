@@ -282,7 +282,13 @@ form textarea {
 	text-decoration: none; /* Supprime le soulignement par défaut des liens */
     display: inline-block; /* Permet au lien de se comporter comme un bouton */
     text-align: center; /* Centre le texte à l'intérieur du "bouton" */
+	color : black;
 }
+
+.btn-submit :hover {
+	color : black;
+}
+
 
 @media all and (max-width: 1180px) {
 	.picture {
