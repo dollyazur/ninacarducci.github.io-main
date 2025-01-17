@@ -22,7 +22,7 @@
 
 
 	<link rel="stylesheet" href="./assets/bootstrap/bootstrap.min.css">
-	<link rel="stylesheet" href="./assets/style.css">
+	<link rel="stylesheet" href="./assets/style.min.css">
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Inter&family=Spectral:ital,wght@0,400;1,300;1,400;1,800&display=swap" rel="stylesheet">
@@ -36,161 +36,82 @@
 	<!-- microdata  -->
 	<script type="application/ld+json">
 		{
-			"@context": "https://schema.org",
-			"@graph": [
-				{
-					"@type": "LocalBusiness",
-					"@id": "Nina Carducci - photographe",
-					"name": "Nina Carducci - photographe (Bordeaux, île-de-France)",
-					"url": "https://ryssanavlys.github.io/OC_P8_NinaCarducci/#services",
-					"description": "Nina Carducci est photographe et offre ses services de shooting, de retouches de photographies et de création d’albums. Figer des instants de bonheur à travers la photographie permet de les partager à ses proches et de rendre ces moments immortels.",
-					"openingHours": "Mo-Fr 10:00-19:00",
-					"address": {
-						"@type": "PostalAddress",
-						"streetAddress": "68 avenue Alsace-Lorraine",
-						"addressLocality": "Bordeaux",
-						"postalCode": "33200",
-						"addressCountry": "FR"
-					},
-					"areaServed": [
-						{
-							"@type": "Place",
-							"name": "Bordeaux"
-						},
-						{
-							"@type": "Place",
-							"name": "Île-de-France"
-						}
-					],
-					"funder": {
-						"@type": "Person",
-						"name": "Nina Carducci",
-						"gender": "Female",
-						"description": "Nina Carducci est une photographe professionnelle passionnée par l'art de capturer des moments authentiques et des émotions à travers son objectif, afin de les rendre immortels.",
-						"url": "https://ryssanavlys.github.io/OC_P8_NinaCarducci/#about"
-					},
-					"telephone": "05 56 67 78 89",
-					"image": "https://ryssanavlys.github.io/OC_P8_NinaCarducci/assets/images/nina-carducci.png",
-					"priceRange": "€€"
-				},
-				{
-					"@type": "Product",
-					"name": "Shooting photo",
-					"Manufacturer": {
-						"@type": "LocalBusiness",
-						"@id": "Nina Carducci - photographe"
-					},
-					"image": "https://ryssanavlys.github.io/OC_P8_NinaCarducci/assets/images/camera.webp",
-					"description": "Pour capturer vos moments les plus précieux et garder un souvenir impérissable.",
-					"offers": {
-						"@type": "Offer",
-						"priceCurrency": "EUR",
-						"price": "350",
-						"eligibleQuantity": {
-							"@type": "QuantitativeValue",
-							"unitCode": "DAY",
-							"value": 0.5
-						},
-						"availableAtOrFrom": {
-							"@type": "Place",
-							"name": "Studio de Nina Carducci",
-							"address": {
-								"@type": "PostalAddress",
-								"streetAddress": "68 avenue Alsace-Lorraine",
-								"addressLocality": "Bordeaux",
-								"postalCode": "33200",
-								"addressCountry": "FR"
-							}
-						},
-						"areaServed": [
-							{
-								"@type": "Place",
-								"name": "Bordeaux"
-							},
-							{
-								"@type": "Place",
-								"name": "Île-de-France"
-							}
-						]
-					}
-				},
-				{
-					"@type": "Product",
-					"name": "Retouche photo",
-					"Manufacturer": {
-						"@type": "LocalBusiness",
-						"@id": "Nina Carducci - photographe"
-					},
-					"image": "https://ryssanavlys.github.io/OC_P8_NinaCarducci/assets/images/camera.webp",
-					"description": "Vous souhaitez retoucher vos photos pour un résultat professionnel ? Bénéficier d’un rendu optimal pour vos publications !",
-					"offers": {
-						"@type": "Offer",
-						"priceCurrency": "EUR",
-						"price": "50",
-						"eligibleQuantity": {
-							"@type": "QuantitativeValue",
-							"unitCode": "H87",
-							"value": 1
-						},
-						"availableAtOrFrom": {
-							"@type": "Place",
-							"name": "Studio de Nina Carducci",
-							"address": {
-								"@type": "PostalAddress",
-								"streetAddress": "68 avenue Alsace-Lorraine",
-								"addressLocality": "Bordeaux",
-								"postalCode": "33200",
-								"addressCountry": "FR"
-							}
-						},
-						"areaServed": [
-							{
-								"@type": "Place",
-								"name": "France entière"
-							}
-						]
-					}
-				},
-				{
-					"@type": "Product",
-					"name": "Album photos",
-					"Manufacturer": {
-						"@type": "LocalBusiness",
-						"@id": "Nina Carducci - photographe"
-					},
-					"image": "https://ryssanavlys.github.io/OC_P8_NinaCarducci/assets/images/camera.webp",
-					"description": "Partagez avec vos proches et vos clients les photos des moments partagés ensemble à travers un album photo personnalisé.",
-					"offers": {
-						"@type": "Offer",
-						"priceCurrency": "EUR",
-						"price": "400",
-						"eligibleQuantity": {
-							"@type": "QuantitativeValue",
-							"unitCode": "H87",
-							"value": 1
-						},
-						"availableAtOrFrom": {
-							"@type": "Place",
-							"name": "Studio de Nina Carducci",
-							"address": {
-								"@type": "PostalAddress",
-								"streetAddress": "68 avenue Alsace-Lorraine",
-								"addressLocality": "Bordeaux",
-								"postalCode": "33200",
-								"addressCountry": "FR"
-							}
-						},
-						"areaServed": [
-							{
-								"@type": "Place",
-								"name": "France entière"
-							}
-						]
-					}
-				}
-			]
+		  "@context": "https://schema.org",
+		  "@type": "Photographer",
+		  "name": "Nina Carducci",
+		  "image": "assets/output/nina.webp",
+		  "address": {
+			"@type": "PostalAddress",
+			"streetAddress": "68 avenue Alsace-Lorraine",
+			"addressLocality": "Bordeaux",
+			"addressRegion": "Nouvelle-Aquitaine",
+			"postalCode": "33200",
+			"addressCountry": "FR"
+		  },
+		  "telephone": "+33 5 56 67 78 89",
+		  "openingHours": "Mo-Fr 10:00-19:00",
+		  "url": "https://www.site-photographe.com",
+		  "makesOffer": [
+			{
+			  "@type": "Offer",
+			  "name": "Séance photo portrait",
+			  "description": "Une séance photo portrait en studio de 1 heure.",
+			  "price": "120",
+			  "priceCurrency": "EUR",
+			  "availability": "https://schema.org/InStock"
+			},
+			{
+			  "@type": "Offer",
+			  "name": "Séance photo famille",
+			  "description": "Une séance photo en extérieur pour toute la famille (1h30).",
+			  "price": "200",
+			  "priceCurrency": "EUR",
+			  "availability": "https://schema.org/InStock"
+			},
+			{
+			  "@type": "Offer",
+			  "name": "Shooting professionnel",
+			  "description": "Une séance photo professionnelle pour des portraits corporate.",
+			  "price": "150",
+			  "priceCurrency": "EUR",
+			  "availability": "https://schema.org/InStock"
+			}
+		  ],
+		  "hasPart": [
+			{
+			  "@type": "CollectionPage",
+			  "name": "Tous",
+			  "description": "Toutes les photos du portfolio regroupées en une seule catégorie.",
+			  "url": "https://www.site-photographe.com/portfolio"
+			},
+			{
+			  "@type": "CollectionPage",
+			  "name": "Portraits",
+			  "description": "Galerie dédiée aux portraits réalisés par la photographe.",
+			  "url": "https://www.site-photographe.com/portfolio/portraits"
+			},
+			{
+			  "@type": "CollectionPage",
+			  "name": "Mariages",
+			  "description": "Galerie des photos de mariage prises par la photographe.",
+			  "url": "https://www.site-photographe.com/portfolio/mariages"
+			},
+			{
+			  "@type": "CollectionPage",
+			  "name": "Mode",
+			  "description": "Photos réalisées pour des projets de mode.",
+			  "url": "https://www.site-photographe.com/portfolio/mode"
+			},
+			{
+			  "@type": "CollectionPage",
+			  "name": "Paysages",
+			  "description": "Collection de photos de paysages et d’extérieur.",
+			  "url": "https://www.site-photographe.com/portfolio/paysages"
+			}
+		  ]
 		}
-	</script>
+		</script>
+		
 </head>
 <body>
 	<header>
